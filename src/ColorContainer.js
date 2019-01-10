@@ -9,7 +9,7 @@ export default function render(props) {
         <div className="color-container">
             <div 
                 className="color-view"
-                style={{ backgroundColor: `hsl(${h}, ${s}%, ${l}%)`, border: '1px solid black'}}
+                style={{ backgroundColor: `hsl(${h}, ${s}%, ${l}%)`}}
             />
             <div className="controls">
                 <div>
