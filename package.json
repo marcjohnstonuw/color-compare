@@ -2,7 +2,7 @@
   "name": "color-compare",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://marcjohnstonuw.github.io/color-compare",
+  "homepage": "https://marcjohnstonuw.github.io/color-compare/",
   "dependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",

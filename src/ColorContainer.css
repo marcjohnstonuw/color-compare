@@ -1,0 +1,17 @@
+.color-container {
+    flex: 1 0 100px;
+}
+
+.color-view {
+    height: 70%;
+}
+
+input {
+    display: inline-block;
+    width: 2rem;
+}
+
+input[type="range"] {
+    width: 90%;
+    margin: auto;
+}
