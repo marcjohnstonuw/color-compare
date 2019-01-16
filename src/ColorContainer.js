@@ -14,7 +14,10 @@ export default function render(props) {
             <div className="controls">
                 <div>
                     Hue: 
-                    <input value={h} onChange={props.onUpdate} />
+                    <input 
+                        value={h}
+                        name="h"
+                        onChange={props.onUpdate} />
                 </div>
                 <input 
                     name="h"
@@ -27,7 +30,11 @@ export default function render(props) {
                 
                 <div>
                     Sat: 
-                    <input value={s} onChange={props.onUpdate} />
+                    <input
+                        value={s}
+                        onChange={props.onUpdate}    
+                        name="s"
+                    />
                 </div>
                 <input 
                     name="s"
@@ -40,7 +47,11 @@ export default function render(props) {
                 
                 <div>
                     Light: 
-                    <input value={l} onChange={props.onUpdate} />
+                    <input
+                        value={l}
+                        onChange={props.onUpdate} 
+                        name="l"
+                    />
                 </div>
                 <input 
                     name="l"
