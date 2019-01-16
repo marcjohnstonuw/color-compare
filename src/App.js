@@ -51,7 +51,7 @@ class App extends Component {
     document.body.appendChild(el);
     el.select();
     document.execCommand('copy');
-    // document.body.removeChild(el);
+    document.body.removeChild(el);
   }
   render() {
     let pageIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8];
