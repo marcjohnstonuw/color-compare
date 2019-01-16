@@ -13,7 +13,6 @@ class App extends Component {
     let params = (new URL(document.location)).searchParams;
     let queryState = params.get('data');
     const localStorageState = window.localStorage.getItem('data');
-    debugger;
     this.state = queryState ? JSON.parse(queryState) :
       localStorageState ? JSON.parse(localStorageState) : defaultState;
   }

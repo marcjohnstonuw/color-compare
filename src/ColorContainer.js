@@ -2,65 +2,84 @@ import React from 'react';
 import './ColorContainer.css';
 
 export default function render(props) {
-    const {h, s, l} = props.color;
+    const { h, s, l } = props.color;
     console.log(props);
     console.log(`hsl(${h}, ${s}%, ${l}%)`);
     return (
         <div className="color-container">
-            <div 
+            <div
                 className="color-view"
-                style={{ backgroundColor: `hsl(${h}, ${s}%, ${l}%)`}}
+                style={{ backgroundColor: `hsl(${h}, ${s}%, ${l}%)` }}
             />
             <div className="controls">
-                <div>
-                    Hue: 
-                    <input 
-                        value={h}
+                <div className="control-group">
+                    <div>
+                        Hue:
+                    <input
+                            tabindex="1"
+                            value={h}
+                            style={{ width: '3rem' }}
+                            type="number"
+                            name="h"
+                            onChange={props.onUpdate} />
+                    </div>
+                    <input
                         name="h"
-                        onChange={props.onUpdate} />
+                        type="range"
+                        tabindex="2"
+                        min="0"
+                        max="360"
+                        value={h}
+                        onChange={props.onUpdate}
+                    />
+
                 </div>
-                <input 
-                    name="h"
-                    type="range"
-                    min="0"
-                    max="360"
-                    value={h}
-                    onChange={props.onUpdate}
-                />
-                
-                <div>
-                    Sat: 
+                <div className="control-group">
+                    <div>
+                        Sat:
                     <input
-                        value={s}
-                        onChange={props.onUpdate}    
+                            value={s}
+                            tabindex="3"
+                            style={{ width: '3rem' }}
+                            type="number"
+                            onChange={props.onUpdate}
+                            name="s"
+                        />
+                    </div>
+                    <input
                         name="s"
+                        type="range"
+                        tabindex="4"
+                        min="0"
+                        max="100"
+                        value={s}
+                        onChange={props.onUpdate}
                     />
+
                 </div>
-                <input 
-                    name="s"
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={s}
-                    onChange={props.onUpdate}
-                />
-                
-                <div>
-                    Light: 
+                <div className="control-group">
+
+                    <div>
+                        Light:
                     <input
-                        value={l}
-                        onChange={props.onUpdate} 
+                            value={l}
+                            tabindex="5"
+                            style={{ width: '3rem' }}
+                            type="number"
+                            onChange={props.onUpdate}
+                            name="l"
+                        />
+                    </div>
+                    <input
                         name="l"
+                        type="range"
+                        tabindex="6"
+                        min="0"
+                        max="100"
+                        value={l}
+                        onChange={props.onUpdate}
                     />
                 </div>
-                <input 
-                    name="l"
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={l}
-                    onChange={props.onUpdate}
-                />
             </div>
         </div>
     );

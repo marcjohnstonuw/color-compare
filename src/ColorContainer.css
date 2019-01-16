@@ -15,3 +15,7 @@ input[type="range"] {
     width: 90%;
     margin: auto;
 }
+
+.control-group {
+    margin-bottom: 1.75rem;
+}
