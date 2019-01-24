@@ -2,12 +2,26 @@ import React from 'react';
 import './ColorContainer.css';
 
 export default function render(props) {
-    const { h, s, l } = props.color;
-    console.log(props);
-    console.log(`hsl(${h}, ${s}%, ${l}%)`);
+    const { name, h, s, l } = props.color;
     return (
-        <div className="color-container">
+        <div
+            className="color-container"
+            onDragStart={(e) => props.onDragStart(e)}
+            onDragEnter={(e) => props.onDragEnter(e)}
+            onDragEnd={(e) => props.onDragEnd(e)}
+        >
+            <div className="name-container">
+
+                <input
+                    value={name}
+                    name="name"
+
+                    onChange={props.onUpdate}
+                />
+                <button onClick={() => props.onRemoveColor()}>&times;</button>
+            </div>
             <div
+                draggable
                 className="color-view"
                 style={{ backgroundColor: `hsl(${h}, ${s}%, ${l}%)` }}
             />
@@ -16,9 +30,8 @@ export default function render(props) {
                     <div>
                         Hue:
                     <input
-                            tabindex="1"
+                            tabIndex="1"
                             value={h}
-                            style={{ width: '3rem' }}
                             type="number"
                             name="h"
                             onChange={props.onUpdate} />
@@ -26,7 +39,7 @@ export default function render(props) {
                     <input
                         name="h"
                         type="range"
-                        tabindex="2"
+                        tabIndex="2"
                         min="0"
                         max="360"
                         value={h}
@@ -39,8 +52,7 @@ export default function render(props) {
                         Sat:
                     <input
                             value={s}
-                            tabindex="3"
-                            style={{ width: '3rem' }}
+                            tabIndex="3"
                             type="number"
                             onChange={props.onUpdate}
                             name="s"
@@ -49,7 +61,7 @@ export default function render(props) {
                     <input
                         name="s"
                         type="range"
-                        tabindex="4"
+                        tabIndex="4"
                         min="0"
                         max="100"
                         value={s}
@@ -63,8 +75,7 @@ export default function render(props) {
                         Light:
                     <input
                             value={l}
-                            tabindex="5"
-                            style={{ width: '3rem' }}
+                            tabIndex="5"
                             type="number"
                             onChange={props.onUpdate}
                             name="l"
@@ -73,7 +84,7 @@ export default function render(props) {
                     <input
                         name="l"
                         type="range"
-                        tabindex="6"
+                        tabIndex="6"
                         min="0"
                         max="100"
                         value={l}

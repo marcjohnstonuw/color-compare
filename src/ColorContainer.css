@@ -1,5 +1,6 @@
 .color-container {
     flex: 1 0 100px;
+    user-select: none;
 }
 
 .color-view {
@@ -8,7 +9,8 @@
 
 input {
     display: inline-block;
-    width: 2rem;
+    width: 4rem;
+    font-size: 1.5rem;
 }
 
 input[type="range"] {
