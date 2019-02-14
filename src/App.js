@@ -11,7 +11,7 @@ import ColorContainer from './ColorContainer';
 import './App.css';
 import defaultState from './defaultState';
 
-const lzmaCodec = JsonUrl('lzma');
+const lzmaCodec = JsonUrl('lzw');
 
 class App extends Component {
   constructor(props) {
